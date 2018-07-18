@@ -1,5 +1,8 @@
 package com.github.wxiaoqi.common.exception;
 
+/**
+ * @author XX
+ */
 public class BaseException extends RuntimeException {
     private int states;
 

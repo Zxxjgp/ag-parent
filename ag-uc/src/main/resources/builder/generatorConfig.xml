@@ -23,7 +23,7 @@
         </sqlMapGenerator>
         <javaClientGenerator targetPackage="${targetMapperPackage}" type="XMLMAPPER" targetProject="${targetJavaProject}">
         </javaClientGenerator>
-        <table tableName="base_user" domainObjectName="BaseUser">
+        <table tableName="base_user" domainObjectName="BaseeeUser">
 
         </table>
 </context>

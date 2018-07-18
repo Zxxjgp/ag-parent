@@ -6,5 +6,5 @@ import tk.mybatis.mapper.common.Mapper;
 import java.util.List;
 
 public interface BaseUserMapper extends Mapper<BaseUser> {
-    List<BaseUser> findaddlist();
+    List<BaseUser> selectListAll();
 }

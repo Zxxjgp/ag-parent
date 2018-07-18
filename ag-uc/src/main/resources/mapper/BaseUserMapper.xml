@@ -10,7 +10,7 @@
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
   </resultMap>
-  <select id="findaddlist" resultMap="BaseResultMap" >
+  <select id="selectListAll" resultMap="BaseResultMap" >
      SELECT * FROM base_user
   </select>
 </mapper>

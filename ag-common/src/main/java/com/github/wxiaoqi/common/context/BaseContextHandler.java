@@ -1,7 +1,16 @@
 package com.github.wxiaoqi.common.context;
 
+import com.github.wxiaoqi.common.constant.RestCodeConstants;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @ProjectName: ag-parent
@@ -43,5 +52,34 @@ public class BaseContextHandler {
 
     public  static  void remove(){
         threadLocal.remove();
+    }
+
+    public static  String getUserId(){
+        Object value = get(RestCodeConstants.CONTEXT_KEY_USER_ID);
+        return returnObjectValue(value);
+    }
+    public static  String getUserName(){
+        Object value = get(RestCodeConstants.CONTEXT_KEY_USER_NAME);
+        return returnObjectValue(value);
+    }
+    public static void setUserId(String userId){
+        setContext(RestCodeConstants.CONTEXT_KEY_USER_ID,userId);
+    }
+    public static void setUserName(String userName){
+        setContext(RestCodeConstants.CONTEXT_KEY_USER_NAME,userName);
+    }
+
+    public static  String returnObjectValue(Object value){
+        return value == null ? null : value.toString();
+    }
+
+    @RunWith(MockitoJUnitRunner.class)
+    public static  class UnitTest{
+         private  Logger logger = LoggerFactory.getLogger(UnitTest.class);
+        @Test
+        public void setUserInfo(){
+            BaseContextHandler.setUserId("test");
+            assertEquals(BaseContextHandler.getUserId(),"test");
+        }
     }
 }

@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/ag-parent.iml" filepath="$PROJECT_DIR$/ag-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/ag-uc/ag-uc.iml" filepath="$PROJECT_DIR$/ag-uc/ag-uc.iml" />
       <module fileurl="file://$PROJECT_DIR$/ag-zuul/ag-zuul.iml" filepath="$PROJECT_DIR$/ag-zuul/ag-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>
 </project>

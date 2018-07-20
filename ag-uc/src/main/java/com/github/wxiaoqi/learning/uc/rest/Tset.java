@@ -1,11 +1,11 @@
 package com.github.wxiaoqi.learning.uc.rest;
 
-import com.github.wxiaoqi.learning.uc.pojo.Person;
-import org.json.JSONObject;
+import com.github.wxiaoqi.learning.uc.entitytest.Student;
+import com.github.wxiaoqi.learning.uc.entitytest.Person;
+import org.springframework.beans.BeanUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 /**
@@ -30,6 +30,20 @@ public class Tset {
         LocalDateTime nowTime= LocalDateTime.now();
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         System.out.printf(nowTime.format(df));
+        Person p=new Person();
+        p.setAvgScore(3.0);
+        p.setCourseName("courseName");
+        p.setCreateTime(new Date());
+        p.setNum(2);
+
+        Student s=new Student();
+        s.setStudentName("studentName");
+            BeanUtils.copyProperties(p, s);
+
+        System.out.println(p);
+        System.out.println("-------------------");
+        System.out.println(s);
     }
+
 
 }
